@@ -1,0 +1,55 @@
+@startuml
+class User {
+  +id: int
+  +name: string
+  +email: string
+  +password: string
+  +role_id: int
+}
+
+class Role {
+  +id: int
+  +nom: string
+}
+
+class Livre {
+  +id: int
+  +titre: string
+  +description: text
+  +auteur: string
+  +niveau_expertise: string
+  +category_id: int
+  +prix: float
+  +image: string
+  +stock: int
+}
+
+class Categorie {
+  +id: int
+  +nom: string
+}
+
+class Commentaire {
+  +id: int
+  +contenu: text
+  +valide: boolean
+  +user_id: int
+  +livre_id: int
+}
+
+class Vente {
+  +id: int
+  +user_id: int
+  +livre_id: int
+  +quantite: int
+  +prix_unitaire: float
+  +date_vente: datetime
+}
+
+User --> Role
+Livre --> Categorie
+Commentaire --> User
+Commentaire --> Livre
+Vente --> User
+Vente --> Livre
+@enduml

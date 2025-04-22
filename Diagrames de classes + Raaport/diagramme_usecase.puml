@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+
+actor Admin
+actor Editeur
+actor Gestionnaire
+actor Utilisateur
+
+rectangle "Système LivresGourmands.net" {
+  
+  (Gérer les utilisateurs) as GU
+  (Attribuer des rôles) as AR
+  (Ajouter un livre) as AL
+  (Modifier un livre) as ML
+  (Supprimer un livre) as SL
+  (Gérer les commentaires) as GC
+  (Voir catalogue) as VC
+  (Valider commentaires) as VCmt
+  (Voir ventes) as VV
+  (Ajouter un commentaire) as AC
+
+  Admin --> GU
+  Admin --> AR
+  Editeur --> AL
+  Editeur --> ML
+  Editeur --> SL
+  Editeur --> GC
+  Editeur --> VCmt
+  Gestionnaire --> VV
+  Gestionnaire --> VC
+  Utilisateur --> AC
+  Utilisateur --> VC
+}
+
+@enduml
